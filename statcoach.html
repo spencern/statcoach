@@ -1,0 +1,53 @@
+<head>
+  <title>StatCoach</title>
+</head>
+
+<body>
+</body>
+
+<template name="root">
+  <h1>StatCoach</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        {{> yield}}
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="loading">
+  Loading ...
+</template>
+
+<template name="pregame">
+  <a href="{{pathFor 'pitch'}}" id="new_game_button" class="btn btn-success btn-lg">New Game</a>
+  <a href="{{pathFor 'selectTeam'}}" class="btn btn-primary btn-lg btn-block">Select Team</a>
+  <a href="{{pathFor 'addTeam'}}" class="btn btn-primary btn-lg btn-block">Add Team</a>
+</template>
+
+<template name="pitch">
+  <div class="pitch-wrapper">
+    <canvas id="pitch" class="pitch" width="900" height="300"></canvas>
+  </div>
+
+  <button id="new_point_button" class="btn btn-primary btn-lg">New Point</button>
+  <button id="new_game_button" class="btn btn-warning btn-lg">New Game</button>
+  <button id="print_game_button" class="btn btn-primary btn-lg">Print Game</button>
+  <input type="radio" name="endzone_direction" id="dir_ltr" value="ltr" checked>Attacking Right
+  <input type="radio" name="endzone_direction" id="dir_rtl" value="rtl">Attacking Left
+</template>
+
+<template name="createTeams">
+  <button id="club_men" class="btn btn-primary">Club Men</button>
+  <button id="club_mixed" class="btn btn-primary">Club Mixed</button>
+  <button id="club_women" class="btn btn-primary">Club Women</button>
+  <button id="college_men" class="btn btn-primary">College Men</button>
+  <button id="college_women" class="btn btn-primary">College Women</button>
+</template>
+
+<template name="addTeam">
+</template>
+
+<template name="selectTeam">
+</template>

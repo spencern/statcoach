@@ -1,0 +1,18 @@
+/* CSS declarations go here */
+
+.pitch-wrapper {
+    width: 100%;
+    display: inline-block;
+    position: relative;
+}
+.pitch-wrapper:after {
+    padding-top: 33.33%;
+    display: block;
+    content: '';
+}
+.pitch {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0; bottom: 0; right: 0; left: 0;
+}
