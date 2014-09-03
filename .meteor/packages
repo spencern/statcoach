@@ -15,4 +15,7 @@ meteorhacks:npm
 npm-container
 autopublish
 insecure
+mrt:moment
+underscore
+mizzao:autocomplete
 
