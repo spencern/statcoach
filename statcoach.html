@@ -6,8 +6,15 @@
 </body>
 
 <template name="root">
-  <h1>StatCoach</h1>
   <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <h1>StatCoach</h1>
+      </div>
+      <div class="col-md-3 pull-right">
+        {{> loginButtons}}
+      </div>
+    </div>
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12">
         {{> yield}}
@@ -21,9 +28,25 @@
 </template>
 
 <template name="pregame">
-  <a href="{{pathFor 'pitch'}}" id="new_game_button" class="btn btn-success btn-lg">New Game</a>
-  <a href="{{pathFor 'selectTeam'}}" class="btn btn-primary btn-lg btn-block">Select Team</a>
-  <a href="{{pathFor 'addTeam'}}" class="btn btn-primary btn-lg btn-block">Add Team</a>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-3">
+      {{> inputAutocomplete settings=settings id="team_input" class="form-control input-lg" placeholder="Team Name:"}}
+    </div>
+    <div class="col-md-2">
+      <button id="select_team_button" class="btn btn-primary btn-lg btn-block">Select Team</button>
+    </div>
+  </div>
+  <div class="well">
+    <div class="row players">
+      <div>
+        {{#each team.players}}
+        <span class="col-md-3 label label-default">
+          {{fname}} {{lname}} {{number}}
+        </span>
+        {{/each}}
+      </div>
+    </div>
+  </div>
 </template>
 
 <template name="pitch">
@@ -50,4 +73,7 @@
 </template>
 
 <template name="selectTeam">
+  <ul class="nav nav-pills nav-stacked">
+    <li>{{name}} - {{league}} {{division}}</li>
+  </ul>
 </template>

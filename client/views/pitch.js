@@ -4,8 +4,9 @@ Pitch = {
   // *************************************** //
 
   colors: {
-    attack_endzone_color: 'rgba(0,200,0,0.3)',
-    defend_endzone_color: 'rgba(200,0,0,0.3)',
+    attack_endzone_color: 'rgba(0, 0, 0, 0.1)',  //'rgba(0,200,0,0.9)',
+    defend_endzone_color: 'rgba(0, 0, 0, 0.1)',  //'rgba(200,0,0,0.9)',
+    pitch_color:          'rgba(0, 200, 0, 0.3)',
     user_team_color:      'rgba(0,100,255,0.9)',
     opponent_team_color:  'rgba(255,0,0,0.6)',
     text_color:           'rgba(0,0,0,0.5)'
@@ -32,6 +33,8 @@ Pitch = {
   currentDiscPosition: {x: null, y: null},
 
   offensiveTeam: false,
+
+  userTeam: {},
 
   // Variables for the point
   point: {
@@ -329,7 +332,11 @@ function scoringPass(x, y) {
   // Offer option to end game
 }
 
-// write javascript plugin to determine location and angle in radians of text given two points.
+// find middle point of line (x, y)
+// use context.rotate(angleInRadians)
+// use atan2(y - oldY, x - oldX) to find radians
+// use context.save and context.restore to not jack up the pass points
+// 
 
 function drawPass(x,y, result, dist) {
   var canvas = document.getElementById('pitch');
@@ -415,6 +422,8 @@ function drawPitch() {
   context.lineTo(0, canvas.height);
   context.lineTo(0,0);
   context.stroke();
+  context.fillStyle = Pitch.colors.pitch_color;
+  context.fill();
   context.closePath();
   
   // Create Left Endzone
@@ -425,8 +434,8 @@ function drawPitch() {
   context.lineTo(leftEndzoneLine,canvas.height);
   context.lineTo(0,canvas.height);
   context.lineTo(0,0);
-  context.stroke();
   context.fill();
+  context.stroke();
   context.closePath();
   
   // Create Right Endzone
@@ -437,8 +446,8 @@ function drawPitch() {
   context.lineTo(canvas.width,canvas.height);
   context.lineTo(rightEndzoneLine,canvas.height);
   context.lineTo(rightEndzoneLine,0);
-  context.stroke();
   context.fill();
+  context.stroke();
   context.closePath();
   
   // Indicate Started Offense or Defense

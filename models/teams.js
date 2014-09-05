@@ -1,4 +1,5 @@
 Teams = new Meteor.Collection('teams');
+
 if (Meteor.isServer) {
   Meteor.methods({
     'updateRoster': function (teamName) {

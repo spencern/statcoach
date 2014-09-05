@@ -18,4 +18,8 @@ insecure
 mrt:moment
 underscore
 mizzao:autocomplete
+accounts-twitter
+accounts-facebook
+accounts-password
+mrt:accounts-ui-bs3-and-blaze
 
