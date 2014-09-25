@@ -21,5 +21,7 @@ mizzao:autocomplete
 accounts-twitter
 accounts-facebook
 accounts-password
-mrt:accounts-ui-bs3-and-blaze
+mrt:accounts-ui-bootstrap-3
+natestrauser:font-awesome
+mquandalle:jade
 

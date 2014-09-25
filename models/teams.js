@@ -5,7 +5,7 @@ if (Meteor.isServer) {
     'updateRoster': function (teamName) {
       var team = Teams.findOne({name: teamName});
       force = false; // Future update allow users to force team update.
-      if ((moment().diff(team.updatedAt, 'days') < 7) || force || !team.updatedAt) {
+      if ((moment().diff(team.updatedAt, 'days') > 7) || force || !team.updatedAt) {
         var Cheerio = Meteor.npmRequire('cheerio');
         this.unblock();
         

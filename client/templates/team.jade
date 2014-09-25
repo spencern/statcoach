@@ -1,0 +1,46 @@
+template(name="team")
+  with team
+    .container
+      .row
+        .col-md-6
+          h1 {{ name }}
+          h3 {{ league }} {{ division }} Team
+          a(href="{{usauHref}}") {{ name }} USAU Profile
+          
+        .col-md-6
+          .bs-callout.bs-callout-info
+            h4 USAU Ranked Team
+            p.
+              This team is sanctioned and ranked. If you wish to edit the roster
+              manually you can clone the team to create an unranked, editable
+              version of this team.
+      
+      .row
+        .col-md-6
+          header
+            h2 Roster
+          .table-responsive
+            table.table.table-striped
+              thead
+                tr
+                  th Number
+                  th Name
+                  th Position
+                  th Height
+              tbody
+                each players
+                  tr
+                    td {{ number }}
+                    td {{ fullName }}
+                    td {{ position }}
+                    td {{ height }}
+                
+        .col-md-5.col-md-offset-1
+          .row
+            .col-md-12
+              h2 Notifications
+              .alert.alert-info.no-margin.fade.in
+                button.close(data-dismiss="alert") x
+                i.fa.fa-fw.fa-info
+                | Team last updated from USAU database {{ updatedAt }},
+                a.alert-link(href="#") Update Now?

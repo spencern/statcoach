@@ -43,8 +43,10 @@ minimongo@1.0.1
 mizzao:autocomplete@0.4.7
 mizzao:bootstrap-3@3.2.0
 mongo-livedata@1.0.3
-mrt:accounts-ui-bs3-and-blaze@0.4.2
+mquandalle:jade@0.2.7
+mrt:accounts-ui-bootstrap-3@0.3.3
 mrt:moment@2.8.1
+natestrauser:font-awesome@4.2.0
 npm-bcrypt@0.7.7
 npm-container@1.0.0
 oauth1@1.0.0
@@ -52,7 +54,7 @@ oauth2@1.0.0
 oauth@1.0.0
 observe-sequence@1.0.1
 ordered-dict@1.0.0
-particle4dev:sass@0.2.6
+particle4dev:sass@0.2.8
 random@1.0.0
 reactive-dict@1.0.0
 reload@1.0.0

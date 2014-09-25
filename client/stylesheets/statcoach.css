@@ -1,0 +1,77 @@
+/* Bootstrap Callouts */
+ 
+/* Base styles (regardless of theme) */
+.bs-callout {
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid #eee;
+  border-left-width: 5px;
+  border-radius: 3px;
+}
+.bs-callout h4 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.bs-callout p:last-child {
+  margin-bottom: 0;
+}
+.bs-callout code,
+.bs-callout .highlight {
+  background-color: #fff;
+}
+ 
+/* Themes for different contexts */
+.bs-callout-danger {
+  border-left-color: #d9534f;
+}
+.bs-callout-danger h4 {
+ color: #d9534f; 
+}
+.bs-callout-warning {
+  border-left-color: #f0ad4e;
+}
+bs-callout-warning h4 {
+  color: #f0ad4e;
+}
+.bs-callout-info {
+  border-left-color: #5bc0de;
+}
+.bs-callout-info h4 {
+  color: #5bc0de;
+}
+.bs-callout-success {
+  border-left-color: #4cae4c;
+}
+.bs-callout-success h4 {
+  color: #4cae4c;
+}
+
+/* Content */
+.content {
+  margin-top: 30px;
+}
+
+
+.pitch-wrapper {
+    width: 100%;
+    display: inline-block;
+    position: relative;
+}
+.pitch-wrapper:after {
+    padding-top: 33.33%;
+    display: block;
+    content: '';
+}
+.pitch {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0; bottom: 0; right: 0; left: 0;
+}
+.players {
+  font-size: 32px;
+}
+
+.players span {
+  margin: 10px;
+}
