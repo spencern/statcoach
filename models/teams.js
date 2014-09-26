@@ -4,8 +4,8 @@ if (Meteor.isServer) {
   Meteor.methods({
     'updateRoster': function (teamName) {
       var team = Teams.findOne({name: teamName});
-      force = false; // Future update allow users to force team update.
-      if ((moment().diff(team.updatedAt, 'days') > 7) || force || !team.updatedAt) {
+      force = false; // Todo update allow users to force team update.
+      if ((moment().diff(team.updatedAt, 'days') > 14) || force || !team.updatedAt) {
         var Cheerio = Meteor.npmRequire('cheerio');
         this.unblock();
         
@@ -66,7 +66,7 @@ if (Meteor.isServer) {
         }
 
       } else {
-        // Last Updated within a week = don't update again.      
+        // Last Updated within a week = don't update again.
         // Grab player and team info and update correct team.
         return 'Team:' + team.name + ' already up to date';
       }

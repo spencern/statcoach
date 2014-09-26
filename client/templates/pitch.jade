@@ -1,0 +1,12 @@
+template(name="pitch")
+  .pitch-wrapper
+    canvas#pitch.pitch(width="900", height="300")
+  
+  button#new_point_button.btn.btn-primary.btn-lg New Point
+  button#new_game_button.btn.btn-warning.btn-lg New Game
+  button#print_game_button.btn.btn-primary.btn-lg Print Game
+  input#dir_ltr(type="radio", name="endzone_direction", value="ltr" checked)
+  | Attacking Right
+  input#dir_rtl(type="radio", name="endzone_direction", value="rtl")
+  | Attacking Left
+  

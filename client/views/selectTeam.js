@@ -1,4 +1,4 @@
-Template.pregame.settings = function () {
+Template.selectTeam.settings = function () {
   return {
     position: 'bottom',
     limit: 5,
@@ -6,7 +6,7 @@ Template.pregame.settings = function () {
       {
         collection: Teams,
         field: 'name',
-        template: Template.selectTeam,
+        template: Template.teamSelect2,
         callback: function (doc, element) {
           Meteor.call('updateRoster', doc.name);
           Session.set('userTeam', doc);
@@ -16,7 +16,7 @@ Template.pregame.settings = function () {
   };
 };
 
-Template.pregame.events({
+Template.selectTeam.events({
   'click #select_team_button': function () {
     localStorage.userTeam = JSON.stringify(Session.get('userTeam'));
     console.log('Select Team Button clicked');
@@ -26,7 +26,7 @@ Template.pregame.events({
   }
 });
 
-Template.pregame.team = function () {
+Template.selectTeam.team = function () {
   if (!Session.get('userTeam')) {
     if (!localStorage.userTeam)
       Session.set('userTeam', {players: []});
